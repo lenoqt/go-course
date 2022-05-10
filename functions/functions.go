@@ -28,7 +28,7 @@ func sayGreetingPointer(greeting, name *string) {
 
 }
 
-// Variadic params
+// Variadic params received as slice
 func sum(msg string, values ...int) {
 	fmt.Println(values)
 	result := 0
@@ -72,6 +72,11 @@ type greeter struct {
 
 // Value receiver
 func (g greeter) greet() {
+	fmt.Println(g.greeting, g.name)
+}
+
+// With pointer
+func (g *greeter) greetPointer() {
 	fmt.Println(g.greeting, g.name)
 }
 
@@ -135,4 +140,5 @@ func main() {
 		greeting: "Hello",
 		name:     "Go"}
 	g.greet()
+	g.greetPointer()
 }
