@@ -37,7 +37,7 @@ func main() {
 	ms1.foo = 42
 	fmt.Println(ms1.foo)
 
-	// With slices and maps behaviour is different since they don't actually contain the data, they contain a pointer to it.
+	// With slices and maps behaviour is different since they don't actually contain the data, they contain a pointer to it. They are automatically dereferenced.
 	s := []int{1, 2, 3}
 	f := s
 	fmt.Println(s, f)
